@@ -1,6 +1,6 @@
 # Styling
 
-This is the styling section. It owns fonts, sizes, colors, theme tokens, and spacing. For page setup (`@page`, body dimensions), the self-contained-HTML output contract, and PDF export/verify, see [`../technical/README.md`](../technical/README.md).
+Fonts, sizes, colors, theme tokens, and spacing. For page setup (`@page`, body dimensions), the self-contained-HTML output contract, and PDF export/verify, see [`../technical/README.md`](../technical/README.md).
 
 ## Theming
 
@@ -61,9 +61,7 @@ Print-safe rules:
 
 `templates/meridian/` — two-column layout: main column plus sidebar, split by a vertical rule (the "meridian"). Main column holds experience and projects; sidebar holds skills, education, and contact. Start here.
 
-Two columns fit more content and separate dense lists (skills, tools) from narrative (experience). Reach for a single column when content is light, when entries run long, or when a linear read matters more than density.
-
-A single-column template is planned. It is not present yet. Until then, adapt Meridian or collapse it to one column.
+Two columns fit more content and separate dense lists (skills, tools) from narrative (experience). Single-column is the most ATS-safe and universally parseable layout — collapse Meridian to one column when a linear read or maximum parseability matters, or when entries run long. A dedicated single-column template is not in the repo yet.
 
 ## Typography
 

@@ -1,6 +1,6 @@
 # Technical
 
-This is the technical section: how an agent turns the CV HTML into a correct one-page A4 PDF and checks that it fits.
+How an agent turns the CV HTML into a correct one-page A4 PDF and checks that it fits.
 
 ## Generation contract
 
@@ -50,21 +50,17 @@ pdfinfo cv.pdf | grep Pages   # must be: Pages: 1
 
 `chromium` may be `chromium-browser` or `google-chrome` depending on the system. `pdfinfo` comes from poppler-utils.
 
-## Checking fit and line breaks (v1, lean)
+## Checking fit
 
-This is a starting point, to be expanded later.
+The `pdfinfo` page count is the check: `Pages: 1` passes.
 
-The primary check is the page count above: 2+ pages means the content overflowed.
+But `overflow: hidden` clips silently, so content that got cut still reports one page. To catch clipping, render once with the clip off and re-count:
 
-`overflow: hidden` clips silently, so page count alone can miss content that got cut. To catch it, temporarily set:
+1. Temporarily set `body { overflow: visible; }`.
+2. Re-render and run `pdfinfo`. `Pages: 1` means everything fits; `Pages: 2` means content is overflowing and getting clipped in the real build.
+3. Restore `overflow: hidden`.
 
-```css
-body { overflow: visible; outline: 1px solid red; }
-```
-
-Content past the outline exceeds 296mm. Revert after checking. Alternatively, compare `document.body.scrollHeight` against the box height with headless JS.
-
-Line breaks and fit depend on the specific template and font, so re-check after changing either. Richer automated linebreak and fit assessment is future work.
+Line breaks and fit depend on the template and font, so re-check after changing either.
 
 ## Fixing overflow
 

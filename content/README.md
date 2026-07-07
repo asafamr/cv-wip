@@ -1,91 +1,51 @@
 # Content
 
-This is the content section. It governs the words on the CV: what goes in, how it reads, and how an agent sharpens raw material. It does not cover visual styling (see [../styling/README.md](../styling/README.md)) or PDF export and rendering (see [../technical/README.md](../technical/README.md)).
+Words on the CV: what goes in, how it reads, and how to sharpen raw material. Visual styling is in [../styling/README.md](../styling/README.md); export and rendering in [../technical/README.md](../technical/README.md).
 
-Default behavior: an agent can produce a solid CV from a résumé or LinkedIn export with no extra input. The questions and prompts below are for refining once the human asks.
+Default behavior: produce a solid CV from a résumé or LinkedIn export with no extra input. The questions and rules below refine it when the human asks.
 
 ## Intake questions
 
-Before generating, ask the human a few plain-language questions. Accept plain-word answers. If they skip a question, use the default.
+Before generating, ask a few plain-language questions. Accept plain-word answers. On a skip, use the default.
 
-- **Background** — What to include, cut, or emphasize. Which roles matter most for the target job. Default: keep the last 10–15 years, emphasize recent and senior roles.
+- **Background** — What to include, cut, or emphasize; which roles matter most for the target job. Default: keep the last 10–15 years, emphasize recent and senior roles.
 - **Tone** — Formal or personal. Default: formal.
-- **Style** — Single-column, or two-column with a sidebar. Color or black-and-white. Default: single-column, black-and-white. (Layout and color live in [../styling/README.md](../styling/README.md); pass the answer there.)
+- **Style** — Column count and color. Default: the Meridian two-column template in black-and-white. (Layout and color live in [../styling/README.md](../styling/README.md); pass the answer there.)
 
 ## Content conventions
 
+**Section names** — Use standard headings an ATS maps cleanly: Experience, Skills, Education, Projects. Not "Where I've made impact".
+
 **Bullets**
 
-- Start with a verb. Lead with impact, then the numbers that prove it.
-- 2 lines max per bullet.
-- 3–5 bullets for recent roles, 1–2 for older ones.
+- Start with a verb. Lead with the outcome, then the numbers that prove it.
+- Quantify: accomplished [X], measured by [Y], by doing [Z]. Use the metric that fits the role — latency, throughput, uptime, cost, on-call load, build/deploy time, users, revenue, headcount, scope.
+- 2 lines max per bullet. 3–5 bullets for recent roles, 1–2 for older ones.
 - Drop roles older than 10–15 years when space is tight. Titles and dates can stay as a short list without bullets.
-- Past tense for past roles, present tense for the current one.
-- No first-person pronouns.
+- Past tense for past roles, present tense for the current one. No first-person pronouns.
 
-**Contact line**
+**Skills / stack** — The block a tech recruiter and an ATS scan first. Group it: Languages, Frameworks, Infra, Data. List what the candidate can defend in an interview, not everything they have touched. Mirror the target job's exact terms — "PostgreSQL", not "SQL databases".
 
-- Include email, phone, city, and LinkedIn or GitHub.
-- Render as plain text, or as `mailto:` and `https:` links.
-- Keep link text dark and readable in print (styling in [../styling/README.md](../styling/README.md)).
+**Seniority and scope** — For senior candidates, surface scope: team size, systems owned, scale (traffic, data, spend), and promotions. A staff-level CV that reads like a task list gets screened to the wrong band.
+
+**Contact line** — Email, city, and LinkedIn. Add GitHub or a portfolio for engineering roles; recruiters look for it. Phone is optional and rarely earns its header space. Render as plain text or `mailto:`/`https:` links (styling in [../styling/README.md](../styling/README.md)).
 
 **Never invent details.** No placeholders like "Lorem ipsum" or "[Your Name]". If a name, date, metric, or contact detail is missing, ask the human for it.
 
-## Augmentation prompts
+## Refining raw material
 
-Reusable prompts to apply to raw CV material. Lift any block directly. Fill the `[brackets]`.
+Apply these when sharpening weak content. Never add experience or numbers the candidate did not give — ask for missing figures instead.
 
-**Rewrite a weak bullet to lead with impact**
-
-```
-Rewrite this résumé bullet to start with a strong action verb and lead with
-the result, not the task. Keep it factual. Do not invent numbers.
-Bullet: [paste bullet]
-```
-
-**Quantify an achievement**
-
-```
-This bullet has no numbers. Ask me for the missing figures (scope, %, time,
-money, headcount, users), then rewrite it as: accomplished [X], measured by
-[Y], by doing [Z].
-Bullet: [paste bullet]
-```
-
-**Tighten a bullet to one line**
-
-```
-Shorten this bullet to fit one line (about 90 characters) without losing the
-result or the metric. Cut filler words first.
-Bullet: [paste bullet]
-```
-
-**Tailor the CV to a job description**
-
-```
-Here is a job description and my CV. Reorder and reword my bullets to surface
-the experience this role asks for. Mirror the job's key terms where they
-truthfully apply. Do not add experience I do not have.
-Job description: [paste JD]
-CV: [paste CV or point to the file]
-```
-
-**Draft or sharpen a professional summary**
-
-```
-Write a 2–3 line summary for the top of my CV: years of experience, main
-domain, and one signature strength. No clichés ("results-driven",
-"team player"). Target this role: [role or JD].
-Background: [paste roles, or point to the file]
-```
+- **Strengthen a bullet** — Open with a strong action verb; lead with the result, not the task.
+- **Quantify** — Ask for the missing figures (scope, %, latency, uptime, cost, users, headcount), then rewrite as accomplished [X], measured by [Y], by doing [Z].
+- **Tighten** — Cut a bullet to one line (~90 characters) without losing the result or the metric. Drop filler words first.
+- **Tailor to a job** — Reorder and reword bullets to surface what the role asks for. Mirror the job's key terms where they truthfully apply.
+- **Summary** — 2–3 lines at the top: years of experience, main domain, one signature strength. No clichés ("results-driven", "team player").
 
 ## Reference links
 
-Verified working sources on writing CV and résumé content.
+Sources on writing CV and résumé content, for humans going deeper. All verified reachable.
 
-- [Harvard — Create a Strong Resume](https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/) — bullet structure (action, task, result, why) with samples.
-- [MIT — Crafting an Effective Resume](https://capd.mit.edu/resources/career-toolkit-crafting-an-effective-resume/) — the PAR method and a full walkthrough.
-- [MIT — Resume Action Verbs](https://capd.mit.edu/resources/resume-action-verbs/) — action verbs to open bullets, grouped by skill.
-- [UC Berkeley — Action Verb List (PDF)](https://hrweb.berkeley.edu/sites/default/files/attachments/action-verbs.pdf) — verbs by category: management, communication, technical, more.
-- [MIT — Resume Checklist and Worksheet](https://capd.mit.edu/resources/resume-checklist/) — final pass before sending.
-- [UC Berkeley — Resumes](https://career.berkeley.edu/prepare-for-success/resumes/) — general guidance on phrasing and structure.
+- [Harvard — Create a Strong Resume](https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/) — bullet structure (action, task, result) with samples.
+- [MIT — Resume Action Verbs](https://capd.mit.edu/resources/resume-action-verbs/) — verbs to open bullets, grouped by skill.
+- [UC Berkeley — Resumes](https://career.berkeley.edu/prepare-for-success/resumes/) — phrasing and structure.

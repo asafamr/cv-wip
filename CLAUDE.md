@@ -9,7 +9,7 @@ Note: an agent using this repo to *generate a CV* should follow `README.md`, not
 The root `README.md` is short: a human quickstart plus a map to the sections. The detail lives in top-level section folders, each a `README.md`:
 
 - `styling/` — theming tokens, colors, templates, typography.
-- `content/` — intake questions, content conventions, augmentation prompts, good-CV links.
+- `content/` — intake questions, content conventions, refining rules, good-CV links.
 - `technical/` — generation contract, page-setup CSS, PDF export, fit checks.
 - `templates/` — ready CV templates (default: `meridian/`).
 
