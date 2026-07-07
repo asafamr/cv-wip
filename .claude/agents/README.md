@@ -14,6 +14,7 @@ consult one specialist on behalf of another, the orchestrator routes it.
 | `exporter` | Haiku | Render HTML → PDF and verify it's one A4 page | Writes PDFs only |
 | `frontend-designer` | Sonnet | Build and edit CV templates (routine work) | Yes |
 | `expert-frontend-designer` | Opus | Hard print/paged-media CSS problems only (escalation) | Yes |
+| `wise-advisor` | Fable | Tie-breaker when agents disagree on something crucial | No |
 
 ## Typical flow for a template change
 1. `product-manager` — is this in scope / worth it?
@@ -21,6 +22,10 @@ consult one specialist on behalf of another, the orchestrator routes it.
 3. `exporter` confirms it renders to exactly one page.
 4. `cv-content-expert` judges whether the result is a stronger tech CV.
 5. `commit-reviewer` checks the diff for real names / brands / PII before committing.
+
+If two specialists deadlock on a crucial call (e.g. `product-manager` vs `cv-content-expert`),
+bring in `wise-advisor` to break the tie. It can ask the orchestrator to run `internet-researcher`
+when the disagreement hinges on a checkable fact.
 
 ## Notes
 - Models are set per agent. To change one, edit the `model:` field in its `.md` file.
