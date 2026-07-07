@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(chromium:*)",
+      "Bash(chromium-browser:*)",
+      "Bash(google-chrome:*)",
+      "Bash(pdfinfo:*)",
+      "Bash(git diff:*)"
+    ]
+  }
+}
