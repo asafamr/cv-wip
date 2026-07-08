@@ -1,0 +1,227 @@
+<!--
+  Datum — the default single-column, reverse-chronological CV template for cv-wip.
+  Layout: one linear text column, top to bottom — header, Summary, Experience, Projects, Skills, Education. No sidebar, no grid.
+  Self-contained: inline styles, system fonts, no icons/graphics/tables — maximally ATS-safe. Renders as ONE A4 page.
+
+  ALL TEXT BELOW IS DEMO DATA for a fictional person ("Naomi Adler").
+  Replace every field with the real candidate's details — do not ship this persona.
+  Re-theme fast by editing the CSS custom properties in :root (--accent etc.).
+-->
+<style>
+  :root {
+    /* Theme tokens — change these to reskin the whole template */
+    --accent:  #1f3a5f;   /* name, headings, rules */
+    --ink:     #1f2328;   /* body text */
+    --muted:   #55606b;   /* dates, meta, secondary text */
+    --rule:    #c9d0d8;   /* hairlines under headings */
+    --gap-section: 4.8mm; /* space between sections */
+    --gap-item:    2.6mm; /* space between entries within a section */
+    --font: Helvetica, Arial, sans-serif;
+  }
+
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 210mm;
+    height: 296mm;            /* just under 297mm to avoid a blank 2nd page */
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 12mm 14mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: var(--font);
+    font-size: 9.7pt;
+    line-height: 1.32;
+    color: var(--ink);
+  }
+
+  a { color: var(--ink); text-decoration: none; }
+
+  /* ---------- Contact header (plain text, in the body flow) ---------- */
+  header { margin-bottom: 3.2mm; }
+  .name {
+    font-size: 21pt;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--accent);
+    line-height: 1.05;
+  }
+  .headline {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 1mm;
+  }
+  .contact {
+    margin-top: 1.8mm;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+  .contact .sep { color: var(--rule); margin: 0 1.6mm; }
+
+  /* ---------- Sections ---------- */
+  .section { margin-bottom: var(--gap-section); page-break-inside: avoid; break-inside: avoid; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-size: 11.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    padding-bottom: 1mm;
+    margin-bottom: 2.4mm;
+    border-bottom: 1.4px solid var(--accent);
+    page-break-after: avoid;
+  }
+
+  .summary { margin: 0; }
+
+  /* ---------- Experience / entries ---------- */
+  .entry { margin-bottom: var(--gap-item); page-break-inside: avoid; break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .role { font-weight: 700; font-size: 10pt; }
+  .org  { font-weight: 600; color: var(--ink); }
+  .dates { color: var(--muted); font-size: 8.9pt; white-space: nowrap; }
+  .place { color: var(--muted); font-size: 8.9pt; margin-top: 0.3mm; }
+
+  ul.bullets { margin: 0.9mm 0 0; padding-left: 4mm; }
+  ul.bullets li { margin-bottom: 0.8mm; }
+  ul.bullets li::marker { color: var(--accent); }
+
+  .stack { margin-top: 1.8mm; }          /* second role stacked under same company */
+  .tech { font-size: 8.8pt; color: var(--muted); margin-top: 0.8mm; }
+  .tech b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Skills (plain grouped lines, ATS-friendly) ---------- */
+  .skill-line { margin-bottom: 1.2mm; }
+  .skill-line:last-child { margin-bottom: 0; }
+  .skill-line b { color: var(--ink); font-weight: 700; }
+
+  /* ---------- Education ---------- */
+  .edu-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .edu-degree { font-weight: 700; font-size: 10pt; }
+  .edu-meta { color: var(--muted); font-size: 8.9pt; margin-top: 0.3mm; }
+</style>
+
+<header>
+  <div class="name">Naomi Adler</div>
+  <div class="headline">Senior Operations Manager · Supply Chain &amp; Process Improvement</div>
+  <div class="contact">
+    naomi.adler@email.com<span class="sep">|</span>+1 (312) 555-0172<span class="sep">|</span>Chicago, IL<span class="sep">|</span><a href="https://linkedin.com/in/naomiadler">linkedin.com/in/naomiadler</a><span class="sep">|</span><a href="https://naomiadler.com">naomiadler.com</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-title">Summary</div>
+  <p class="summary">
+    Operations manager with 11 years scaling fulfillment and supply-chain functions across
+    retail and logistics. Turns manual, error-prone processes into measured, repeatable systems —
+    and leads the teams that run them. Known for cutting cost and cycle time without cutting service.
+  </p>
+</section>
+
+<section class="section">
+  <div class="section-title">Experience</div>
+
+  <!-- Company with stacked roles (a promotion) -->
+  <div class="entry">
+    <div class="entry-head">
+      <span class="org">Cascade Retail Group</span>
+      <span class="place">Chicago, IL</span>
+    </div>
+
+    <div class="stack" style="margin-top:1.2mm;">
+      <div class="entry-head">
+        <span class="role">Senior Operations Manager</span>
+        <span class="dates">2021 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Lead a 24-person fulfillment operation across two distribution centers shipping 18k orders per day.</li>
+        <li>Cut order cycle time 34% by redesigning pick-pack workflows and rebalancing shift schedules.</li>
+        <li>Delivered $2.1M in annual savings through carrier renegotiation and packaging standardization.</li>
+        <li>Rolled out a warehouse KPI dashboard, lifting on-time dispatch from 91% to 98.6%.</li>
+      </ul>
+    </div>
+
+    <div class="stack">
+      <div class="entry-head">
+        <span class="role">Operations Manager</span>
+        <span class="dates">2019 – 2021</span>
+      </div>
+      <ul class="bullets">
+        <li>Managed inbound receiving and inventory accuracy for a 140k-SKU catalog, reaching 99.4% cycle-count accuracy.</li>
+        <li>Launched a returns-processing line that recovered $680K in resalable stock in year one.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <span><span class="role">Operations Analyst</span> · <span class="org">Harborview Foods</span></span>
+      <span class="dates">2016 – 2019</span>
+    </div>
+    <div class="place">Milwaukee, WI</div>
+    <ul class="bullets">
+      <li>Built demand-forecasting models that trimmed perishable waste 22% across 40 stores.</li>
+      <li>Automated weekly replenishment reporting, saving the planning team 15 hours per week.</li>
+      <li>Coordinated a warehouse-management-system migration for 120 users with zero downtime.</li>
+    </ul>
+    <div class="tech"><b>Tools:</b> SQL, Excel, Tableau, SAP</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <span><span class="role">Supply Chain Coordinator</span> · <span class="org">Trellis Home Goods</span></span>
+      <span class="dates">2014 – 2016</span>
+    </div>
+    <div class="place">Madison, WI</div>
+    <ul class="bullets">
+      <li>Tracked purchase orders and vendor performance across 60+ suppliers, improving on-time delivery to 95%.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Projects</div>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="role">Warehouse Slotting Optimization</span>
+      <span class="dates">2022</span>
+    </div>
+    <div>Reslotted the primary DC by pick frequency, shortening average pick travel 28% and adding 900 orders of daily capacity with no new headcount.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-head">
+      <span class="role">Peak-Season Staffing Playbook</span>
+      <span class="dates">2020</span>
+    </div>
+    <div>Authored a demand-tiered staffing model now used company-wide to plan seasonal hiring; held Q4 overtime cost 12% under budget.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Skills</div>
+  <div class="skill-line"><b>Operations:</b> Fulfillment &amp; warehouse management, inventory control, S&amp;OP, capacity planning, vendor management</div>
+  <div class="skill-line"><b>Process:</b> Lean / Six Sigma, root-cause analysis, KPI design, SOP development, continuous improvement</div>
+  <div class="skill-line"><b>Systems:</b> SAP, NetSuite, WMS (Manhattan), SQL, Tableau, Advanced Excel</div>
+  <div class="skill-line"><b>Leadership:</b> Team building, cross-functional coordination, budget ownership, stakeholder reporting</div>
+</section>
+
+<section class="section">
+  <div class="section-title">Education</div>
+  <div class="entry">
+    <div class="edu-head">
+      <span class="edu-degree">B.S. Supply Chain &amp; Operations Management</span>
+      <span class="dates">2014</span>
+    </div>
+    <div class="edu-meta">University of Wisconsin–Madison · Beta Gamma Sigma honor society</div>
+  </div>
+  <div class="entry">
+    <div class="edu-head">
+      <span class="edu-degree">Lean Six Sigma Green Belt</span>
+      <span class="dates">2018</span>
+    </div>
+    <div class="edu-meta">ASQ — American Society for Quality</div>
+  </div>
+</section>
