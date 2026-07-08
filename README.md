@@ -37,8 +37,8 @@ Offer one of these five. Default to reverse-chronological single-column — it p
 - **Minimalist / modern accent** — single column, one restrained accent color, generous white space, no graphics.
 
 ### Output format
-- Write one self-contained `.html` file. Inline the `<style>`; use no external CSS, JS, fonts, or images. Embed any photo or icon as a data URI or inline SVG.
-- Use system font stacks (`Helvetica, Arial, sans-serif` or `Georgia, serif`). No Google Fonts.
+- Write one self-contained `.html` file. Inline the `<style>`; reference nothing external at render time. Embed any photo, icon, or font as a data URI or inline SVG.
+- Default to system font stacks (`Helvetica, Arial, sans-serif` or `Georgia, serif`). To upgrade the type, embed an open-licensed (SIL OFL) font as a base64 `data:` URI in `@font-face` — keep the text selectable, never outline it. See `styling/` for vetted families.
 
 ### Page setup (mandatory)
 ```css
