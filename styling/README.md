@@ -38,8 +38,10 @@ Any dark, saturated color works if it carries at body-text weight on white — t
 
 - `#2f5d62` teal (Meridian default)
 - `#1f3a5f` navy
+- `#3b3775` indigo (Prism)
+- `#3f5a73` slate — a quiet, low-contrast accent (Quill)
 - `#355e3b` hunter green
-- `#6b2737` burgundy
+- `#6b2737` burgundy (Keystone)
 - `#3d3d3d` near-black (monochrome)
 - `#9a3324` rust — a warmer accent for design- or product-leaning roles; not the default for engineering CVs
 
