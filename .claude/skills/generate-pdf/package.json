@@ -1,0 +1,9 @@
+{
+  "name": "generate-pdf",
+  "private": true,
+  "type": "module",
+  "description": "Playwright driver: render a CV HTML file to a one-page A4 PDF.",
+  "dependencies": {
+    "playwright": "^1.61.0"
+  }
+}
