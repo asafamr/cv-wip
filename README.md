@@ -8,15 +8,7 @@ Open ChatGPT, Claude, or Gemini. Attach your current CV (or paste your backgroun
 
 > Read the instructions at https://github.com/asafamr/cv-wip and follow them to turn my attached CV into a one-page PDF.
 
-The assistant asks a few questions first:
-
-- **Background** — what to include, cut, or emphasize; which roles matter most.
-- **Tone** — formal or personal.
-- **Style** — single-column or two-column with a sidebar; color or black-and-white.
-
-Answer in plain words. It generates the CV, checks that it fits on one page, and gives you a **PDF** to download. To change something, say so ("tighten the spacing", "drop my first job") and it re-exports.
-
-Everything below is for the assistant.
+The assistant asks a few plain-language questions — what to emphasize, formal or personal tone, single- or two-column — generates the CV, checks that it fits on one page, and gives you a **PDF** to download. To change something, say so ("tighten the spacing", "drop my first job") and it re-exports.
 
 ## For agents
 
