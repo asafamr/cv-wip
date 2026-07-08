@@ -24,7 +24,7 @@ Do these three steps in order, before writing any HTML. Do not skip to generatio
 
 1. **Set the depth with the user.** Ask which they want, and wait for the answer:
    - **Quick** — you pick the template, tone, and style that fit their content, and generate in one pass. Choose this if the user does not answer.
-   - **Guided** — you ask about background (what to include, cut, or emphasize; which roles matter most), tone (formal or personal), and style (single- or two-column; color or black-and-white) before generating.
+   - **Guided** — you ask about the target role (paste the job description or name the title and level), background (what to include, cut, or emphasize; which roles matter most), tone (formal or personal), and style (single- or two-column; color or black-and-white) before generating.
 2. **Validate the content is enough to work with.** You need a name, at least one contact detail, and at least two roles with dates and responsibilities. If any of these is missing, ask for it before generating. Never invent facts or fill gaps with placeholders.
 3. **Check the content against the conventions below.** Compare what the user gave you to the Content conventions and Fitting rules. Name every gap: bullets without a verb, impact, or number; missing or vague dates; roles that must be cut or condensed to fit one page; content that will overflow. In Quick mode, fix these as you generate and note what you changed. In Guided mode, list them and confirm the fixes with the user first.
 
@@ -63,7 +63,8 @@ Everything fits in 296mm of height. Cut content before shrinking text below read
 - Set `page-break-inside: avoid; break-inside: avoid;` on sections and items as a safety net. Fitting the content is the real fix.
 
 ### Content conventions
-- Bullets: 2 lines max, start with a verb, lead with impact and numbers.
+Full content rules — tailoring to a specific job and candidate, seniority signals, banned phrasing, ATS parsing — are in [content/README.md](content/README.md). When a target role is given, tailor to it before generating. The essentials:
+- Bullets: 2 lines max, start with an ownership verb, lead with the outcome; add numbers where the candidate has real figures. Never manufacture a metric.
 - 3–5 bullets for recent roles, 1–2 for older ones. Drop roles older than 10–15 years when space is tight.
 - Contact line: email, phone, city, LinkedIn/GitHub as plain text or `mailto:`/`https:` links. Keep links dark and readable in print.
 - Never use placeholders like "Lorem ipsum" or "[Your Name]". Ask for missing details instead of inventing them.
