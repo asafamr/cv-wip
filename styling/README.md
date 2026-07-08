@@ -25,7 +25,7 @@ A template's layout, its color theme, and its typography are three independent a
 
 Composing a look: pick one template, one color preset, and one typography preset. Paste the preset's tokens into the template's `:root`, replacing only those tokens. Leave `--ink`, `--muted`, `--rule`, and the spacing tokens as the template sets them. The result is still one self-contained HTML file — presets are token values you inline, never files you link.
 
-Default composition: **Meridian + Teal + Modern**. Use it when the user does not steer.
+Default composition: **Datum + Monochrome + Modern** — single-column, black-and-white, the most ATS-safe. Use it when the user does not steer. Meridian + Teal is the featured two-column option for dense content.
 
 ## Color presets
 
@@ -89,8 +89,8 @@ Type sizes:
 
 ## Templates
 
-### Meridian (default)
+### Meridian (two-column)
 
-`templates/meridian/` — two-column layout: main column plus sidebar, split by a vertical rule (the "meridian"). Main column holds experience and projects; sidebar holds skills, education, and contact. Start here.
+`templates/meridian/` — two-column layout: main column plus sidebar, split by a vertical rule (the "meridian"). Main column holds experience and projects; sidebar holds skills, education, and contact. The featured two-column option; use it for dense content.
 
-Two columns fit more content and separate dense lists (skills, tools) from narrative (experience). Single-column is the most ATS-safe and universally parseable layout — collapse Meridian to one column when a linear read or maximum parseability matters, or when entries run long. A dedicated single-column template is not in the repo yet.
+Two columns fit more content and separate dense lists (skills, tools) from narrative (experience). Single-column is the most ATS-safe and universally parseable layout — collapse Meridian to one column when a linear read or maximum parseability matters, or when entries run long. The default single-column template is `templates/datum/`.
