@@ -32,20 +32,23 @@ Reskin flow:
 
 Default to one accent plus neutrals: ink for body, muted for meta, a hairline rule for dividers. One accent carries the whole document.
 
-Black-and-white is a valid default. Set `--accent` to a dark neutral and the CV reads as a clean monochrome.
+Black-and-white is a valid default. Set `--accent` to a dark neutral and the CV reads as monochrome.
 
-Ready accent values:
+Any dark, saturated color works if it carries at body-text weight on white — test it as a link color, not just as a heading. These are vetted starting points, all passing WCAG AA on white:
 
 - `#2f5d62` teal (Meridian default)
 - `#1f3a5f` navy
+- `#355e3b` hunter green
 - `#6b2737` burgundy
 - `#3d3d3d` near-black (monochrome)
+- `#9a3324` rust — a warmer accent for design- or product-leaning roles; not the default for engineering CVs
 
-Pick one that carries at body-text weight on white. Test it as a link color, not just as a heading.
+Derive `--accent-soft` from whichever you pick (see the reskin flow above).
 
 Print-safe rules:
 
 - Keep links dark and readable in print. Use `--accent`, not bright blue.
+- Check the accent in grayscale and on a printed page, not just on screen. Warm tones (rust, browns) degrade most on office laser printers.
 - Backgrounds and tints drop out of the PDF unless you opt in. The templates set this on `body`:
 
   ```css
@@ -69,6 +72,10 @@ System font stacks only. No Google Fonts, no web fonts.
 
 - Sans: `"Helvetica Neue", Helvetica, Arial, sans-serif`
 - Serif: `Georgia, serif`
+
+Serif reads senior and considered — fitting at staff/principal or research levels. Sans reads current and is the safe default. Pick one for the whole document.
+
+Monospace is allowed only for the tech-stack line or inline tool and version tokens, set in ink — never for body, headings, name, or dates, and not on functional or non-engineering CVs. Use `"SF Mono", Menlo, Consolas, "Liberation Mono", monospace`, and keep the accent color off it. One emphasis at a time.
 
 Type sizes:
 
