@@ -1,0 +1,3 @@
+# Claude Code local state — keep agents tracked, ignore the rest
+.claude/worktrees/
+.claude/settings.local.json
