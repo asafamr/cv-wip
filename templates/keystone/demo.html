@@ -1,0 +1,223 @@
+<!--
+  Keystone — a single-column hybrid CV template for cv-wip.
+  Layout: one text flow. A tinted "Core Skills / Key Achievements" block sits ABOVE
+  the dated work history, so skills lead and the timeline follows. ATS-safe: standard
+  headings, real text only, no columns, no icons, no skill bars, no graphics.
+  Self-contained: inline styles, system fonts. Renders as ONE A4 page.
+
+  ALL TEXT BELOW IS DEMO DATA for a fictional person ("Marisol Vega").
+  Replace every field with the real candidate's details — do not ship this persona.
+  Re-theme fast by editing the CSS custom properties in :root (--accent etc.).
+-->
+<style>
+  :root {
+    /* Theme tokens — change these to reskin the whole template */
+    --accent:      #7a2230;   /* name, headings, rules, links — deep oxblood */
+    --accent-soft: #f6ecee;   /* tint behind the highlight block */
+    --ink:         #1f2124;   /* body text */
+    --muted:       #5c6169;   /* dates, meta, secondary text */
+    --rule:        #d8d3d4;   /* hairlines */
+    --gap-section: 4.4mm;     /* space between sections */
+    --gap-item:    2.4mm;     /* space between items within a section */
+    --font-serif:  Georgia, "Times New Roman", serif;      /* name + headings */
+    --font-sans:   "Helvetica Neue", Helvetica, Arial, sans-serif; /* body */
+  }
+
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 210mm;
+    height: 296mm;            /* just under 297mm to avoid a blank 2nd page */
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 12mm 14mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: var(--font-sans);
+    font-size: 9.5pt;
+    line-height: 1.32;
+    color: var(--ink);
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+
+  /* ---------- Header ---------- */
+  header { margin-bottom: 3mm; }
+  .name {
+    font-family: var(--font-serif);
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--accent);
+    line-height: 1.05;
+  }
+  .headline {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 1mm;
+  }
+  .contact {
+    margin-top: 1.8mm;
+    font-size: 8.7pt;
+    color: var(--muted);
+  }
+  .contact a { color: var(--muted); }
+  .contact .sep { color: var(--rule); padding: 0 1.2mm; }
+  .header-rule { height: 2px; background: var(--accent); margin-top: 2.6mm; }
+
+  /* ---------- Sections ---------- */
+  .section { margin-bottom: var(--gap-section); page-break-inside: avoid; break-inside: avoid; }
+  .section:last-child { margin-bottom: 0; }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 11.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    padding-bottom: 1mm;
+    margin-bottom: 2.2mm;
+    border-bottom: 1px solid var(--rule);
+    page-break-after: avoid;
+  }
+  p.summary { margin: 0; }
+
+  /* ---------- Highlight block: Core Skills / Key Achievements ---------- */
+  .highlight {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 3mm 4mm 3.2mm;
+    margin-bottom: var(--gap-section);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .highlight .section-title { margin-top: 0; }
+  .sub-label {
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    margin: 0 0 1.4mm;
+  }
+  .highlight ul.bullets { margin: 0 0 2.6mm; padding-left: 4mm; }
+  .highlight ul.bullets li { margin-bottom: 1mm; }
+  ul.bullets li::marker { color: var(--accent); }
+
+  .skill-line { margin-bottom: 1mm; }
+  .skill-line:last-child { margin-bottom: 0; }
+  .skill-line .k { font-weight: 700; color: var(--ink); }
+
+  /* ---------- Experience ---------- */
+  .entry { margin-bottom: var(--gap-item); page-break-inside: avoid; break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .role { font-weight: 700; font-size: 9.7pt; }
+  .org { font-weight: 600; color: var(--ink); }
+  .dates { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
+  .place { color: var(--muted); font-size: 8.6pt; margin-top: 0.2mm; }
+  ul.bullets { margin: 0.8mm 0 0; padding-left: 4mm; }
+  ul.bullets li { margin-bottom: 0.7mm; }
+
+  /* ---------- Education ---------- */
+  .edu-line { margin-bottom: 1mm; }
+  .edu-line:last-child { margin-bottom: 0; }
+  .edu-line .k { font-weight: 700; }
+  .edu-line .v { color: var(--muted); font-size: 8.8pt; }
+</style>
+
+<header>
+  <div class="name">Marisol Vega</div>
+  <div class="headline">Operations &amp; Customer Experience Leader · Hospitality &rarr; SaaS</div>
+  <div class="contact">
+    <span>marisol.vega@email.com</span><span class="sep">·</span>
+    <span>+1 (312) 555-0173</span><span class="sep">·</span>
+    <span>Chicago, IL</span><span class="sep">·</span>
+    <a href="https://linkedin.com/in/marisolvega">linkedin.com/in/marisolvega</a><span class="sep">·</span>
+    <a href="https://marisolvega.work">marisolvega.work</a>
+  </div>
+  <div class="header-rule"></div>
+</header>
+
+<section class="section">
+  <div class="section-title">Summary</div>
+  <p class="summary">
+    Operations and customer-experience leader with 12+ years running service teams, most
+    recently in B2B SaaS customer operations. Made the hospitality-to-tech move by carrying
+    the same strengths across: high-stakes service delivery, process design, and building
+    teams that hit hard SLAs. Turns front-line insight into scalable playbooks and measurable
+    retention.
+  </p>
+</section>
+
+<section class="highlight">
+  <div class="section-title">Core Skills &amp; Key Achievements</div>
+
+  <div class="sub-label">Key Achievements</div>
+  <ul class="bullets">
+    <li>Scaled a multi-region service org and lifted CSAT from 78% to 94% over four quarters.</li>
+    <li>Cut customer onboarding time ~35% by redesigning playbooks and handoffs across teams.</li>
+    <li>Drove $4M+ in annual revenue retention through a proactive account-health program.</li>
+    <li>Led a cross-functional CRM migration adopted by 120+ staff with zero downtime.</li>
+  </ul>
+
+  <div class="sub-label">Core Skills</div>
+  <div class="skill-line"><span class="k">Leadership:</span> Team building, P&amp;L ownership, Change management, Coaching</div>
+  <div class="skill-line"><span class="k">Customer &amp; Ops:</span> Customer success, Process design, SLA &amp; CSAT, Onboarding</div>
+  <div class="skill-line"><span class="k">Tools:</span> Salesforce, Zendesk, Looker, Notion, SQL (basic)</div>
+</section>
+
+<section class="section">
+  <div class="section-title">Experience</div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <span><span class="role">Customer Operations Manager</span> · <span class="org">Northwind SaaS</span></span>
+      <span class="dates">2022 &ndash; Present</span>
+    </div>
+    <div class="place">Chicago, IL</div>
+    <ul class="bullets">
+      <li>Built the customer operations function from scratch, hiring and coaching a team of 9.</li>
+      <li>Cut onboarding time ~35% by rebuilding the implementation playbook end to end.</li>
+      <li>Launched an account-health program that protected $4M+ in annual recurring revenue.</li>
+      <li>Owned the Salesforce-to-new-CRM migration, rolled out to 120+ staff without downtime.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <span><span class="role">General Manager</span> · <span class="org">Aurora Hospitality Group</span></span>
+      <span class="dates">2016 &ndash; 2022</span>
+    </div>
+    <div class="place">Chicago, IL</div>
+    <ul class="bullets">
+      <li>Ran a 120-person, multi-property service operation with full P&amp;L ownership.</li>
+      <li>Raised guest-satisfaction scores from 78% to 94% by redesigning service standards and training.</li>
+      <li>Standardized playbooks across sites, the foundation later carried into SaaS onboarding work.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <span><span class="role">Assistant General Manager</span> · <span class="org">Cedar &amp; Pine Hotels</span></span>
+      <span class="dates">2012 &ndash; 2016</span>
+    </div>
+    <div class="place">Evanston, IL</div>
+    <ul class="bullets">
+      <li>Managed daily operations and a 30-person front-line team, consistently beating SLA targets.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Education &amp; Certifications</div>
+  <div class="edu-line">
+    <span class="k">B.A. Business Administration</span>
+    <span class="v">— Lakeshore State University · 2011</span>
+  </div>
+  <div class="edu-line">
+    <span class="k">Certified Customer Success Manager</span>
+    <span class="v">— SuccessHACKER · 2023</span>
+  </div>
+</section>

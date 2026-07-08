@@ -22,6 +22,14 @@ Everything below is for the assistant.
 
 Generate one HTML file that renders as a single A4 PDF page.
 
+### Templates
+Offer one of these five. Default to reverse-chronological single-column — it parses cleanly through applicant tracking systems (ATS) and suits most candidates.
+- **Reverse-chronological, single-column** — newest role first, one column. The default; safe for steady careers and ATS.
+- **Combination / hybrid** — skills summary on top, dated work history below. For career changers and senior candidates.
+- **Two-column (main + sidebar)** — sidebar for contact and skills, main column for experience. Fits dense content; build it as a single text flow so ATS reads it in order.
+- **Functional / skills-based** — grouped by skill, work history minimized. Use only for large gaps or non-linear paths; ATS and recruiters treat it with suspicion.
+- **Minimalist / modern accent** — single column, one restrained accent color, generous white space, no graphics.
+
 ### Output format
 - Write one self-contained `.html` file. Inline the `<style>`; use no external CSS, JS, fonts, or images. Embed any photo or icon as a data URI or inline SVG.
 - Use system font stacks (`Helvetica, Arial, sans-serif` or `Georgia, serif`). No Google Fonts.
@@ -58,8 +66,23 @@ Everything fits in 296mm of height. Cut content before shrinking text below read
 Render and check the page count:
 
 ```bash
-chromium --headless --print-to-pdf=cv.pdf --no-pdf-header-footer cv.html
+google-chrome --headless --print-to-pdf=cv.pdf --no-pdf-header-footer cv.html
 pdfinfo cv.pdf | grep Pages   # must be: Pages: 1
 ```
 
 If it's 2+ pages, trim content or spacing and re-render. Do not shrink fonts.
+
+## References
+
+Template conventions and ATS guidance draw on university career centers and established career authorities.
+
+- [Harvard – Create a Strong Resume](https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/) — Single-column, reverse-chronological, readability- and ATS-conscious guidance with editable templates.
+- [Purdue OWL – Résumés and CVs](https://owl.purdue.edu/owl/job_search_writing/resumes_and_vitas/index.html) — Defines the skills/chronological/functional styles and the resume-vs-CV distinction.
+- [Indeed – Resume Format Guide](https://www.indeed.com/career-advice/resumes-cover-letters/resume-format-guide-with-examples) — The three structural formats (chronological, functional, combination) plus targeted, with when-to-use notes.
+- [JMU Career Center – Choosing a Résumé Format](https://www.jmu.edu/career/students/career-prep/resumes/format.shtml) — Chronological/functional/combination breakdown; names chronological as the most common.
+- [UConn Center for Career Readiness – Applicant Tracking Systems](https://career.uconn.edu/applicant-tracking-systems/) — Images, text boxes, columns, and tables break ATS parsing; standard headings act as parse keywords.
+- [University of Pittsburgh – Resume/CV Tips: Applicant Tracking Systems](https://careercentral.pitt.edu/blog/2025/02/12/resume-and-cv-writing-tips-applicant-tracking-systems-ats/) — Avoid images, complex designs, and mid-line columns; use standard fonts and plain text.
+- [UT Austin CNS Career Services – Applicant Tracking Systems](https://careerservices.cns.utexas.edu/resources/resumes/applicant-tracking-systems) — Avoid tables, columns, and graphics; use a chronological, text-based layout.
+- [Santa Clara University Career Center – Common ATS Resume Formatting Mistakes](https://www.scu.edu/careercenter/toolkit/job-scan-common-ats-resume-formatting-mistakes/) — Images, graphics, and non-standard formatting cause missing data in parsers.
+- [Washington University in St. Louis – White Space in Your Resume](https://careers.washu.edu/blog/2025/03/18/white-space-in-your-resume-best-practices-examples/) — Balanced white space, margins, and section separation improve readability.
+- [Yale Office of Career Strategy – Resume Formatting and Common Errors](https://ocs.yale.edu/resources/resume-formatting/) — Standard fonts (10–12pt), consistent formatting, mindful white space, no photos or graphics.
