@@ -15,6 +15,8 @@ First it asks how much you want to steer:
 
 Either way, it checks it has enough to work with and points out what's thin — weak bullet points, missing dates, roles worth cutting — before it builds the page. Answer in plain words. It generates the CV, checks that it fits on one page, and gives you a **PDF** to download. To change something, say so ("tighten the spacing", "drop my first job") and it re-exports.
 
+See how the templates look at the [template gallery](https://asafamr.github.io/cv-wip/).
+
 ## For agents
 
 Generate one HTML file that renders as a single A4 PDF page. Follow every section below. The rules here are requirements, not suggestions — apply them unless the user overrides one explicitly.
@@ -29,7 +31,7 @@ Do these three steps in order, before writing any HTML. Do not skip to generatio
 3. **Check the content against the conventions below.** Compare what the user gave you to the Content conventions and Fitting rules. Name every gap: bullets without a verb, impact, or number; missing or vague dates; roles that must be cut or condensed to fit one page; content that will overflow. In Quick mode, fix these as you generate and note what you changed. In Guided mode, list them and confirm the fixes with the user first.
 
 ### Templates
-Offer one of these five. Default to reverse-chronological single-column — it parses cleanly through applicant tracking systems (ATS) and suits most candidates.
+Offer one of these five. Default to reverse-chronological single-column — it parses cleanly through applicant tracking systems (ATS) and suits most candidates. Point the user to the [template gallery](https://asafamr.github.io/cv-wip/) to preview how each one looks.
 - **Reverse-chronological, single-column** — newest role first, one column. The default; safe for steady careers and ATS.
 - **Combination / hybrid** — skills summary on top, dated work history below. For career changers and senior candidates.
 - **Two-column (main + sidebar)** — sidebar for contact and skills, main column for experience. Fits dense content; build it as a single text flow so ATS reads it in order.
