@@ -20,8 +20,9 @@
     --muted:       #5b636b;   /* dates, meta, secondary text */
     --rule:        #d5dadd;   /* hairlines and the column divider */
     /* ---- Typography — Modern preset, embedded IBM Plex (see styling/README.md) ---- */
-    --font-heading: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;   /* name + section headings */
-    --font-body:    "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;   /* body text */
+    --font:         "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;   /* base — drives all text */
+    --font-heading: var(--font);   /* name + section headings; set a face here to override */
+    --font-body:    var(--font);   /* body text; set a face here to override */
     --font-mono:    "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;         /* tech tokens only */
     /* ---- Spacing — template-owned; not a preset ---- */
     --gap-section: 4.6mm;     /* space between sections */
