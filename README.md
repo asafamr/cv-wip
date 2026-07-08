@@ -8,11 +8,25 @@ Open ChatGPT, Claude, or Gemini. Attach your current CV (or paste your backgroun
 
 > Read the instructions at https://github.com/asafamr/cv-wip and follow them to turn my attached CV into a one-page PDF.
 
-The assistant asks a few plain-language questions — what to emphasize, formal or personal tone, single- or two-column — generates the CV, checks that it fits on one page, and gives you a **PDF** to download. To change something, say so ("tighten the spacing", "drop my first job") and it re-exports.
+First it asks how much you want to steer:
+
+- **Quick** — it picks the template, tone, and style for you and generates in one pass.
+- **Guided** — it asks about your background (what to include, cut, or emphasize), tone (formal or personal), and style (single- or two-column; color or black-and-white) before generating.
+
+Either way, it checks it has enough to work with and points out what's thin — weak bullet points, missing dates, roles worth cutting — before it builds the page. Answer in plain words. It generates the CV, checks that it fits on one page, and gives you a **PDF** to download. To change something, say so ("tighten the spacing", "drop my first job") and it re-exports.
 
 ## For agents
 
-Generate one HTML file that renders as a single A4 PDF page.
+Generate one HTML file that renders as a single A4 PDF page. Follow every section below. The rules here are requirements, not suggestions — apply them unless the user overrides one explicitly.
+
+### Before you generate
+Do these three steps in order, before writing any HTML. Do not skip to generation.
+
+1. **Set the depth with the user.** Ask which they want, and wait for the answer:
+   - **Quick** — you pick the template, tone, and style that fit their content, and generate in one pass. Choose this if the user does not answer.
+   - **Guided** — you ask about background (what to include, cut, or emphasize; which roles matter most), tone (formal or personal), and style (single- or two-column; color or black-and-white) before generating.
+2. **Validate the content is enough to work with.** You need a name, at least one contact detail, and at least two roles with dates and responsibilities. If any of these is missing, ask for it before generating. Never invent facts or fill gaps with placeholders.
+3. **Check the content against the conventions below.** Compare what the user gave you to the Content conventions and Fitting rules. Name every gap: bullets without a verb, impact, or number; missing or vague dates; roles that must be cut or condensed to fit one page; content that will overflow. In Quick mode, fix these as you generate and note what you changed. In Guided mode, list them and confirm the fixes with the user first.
 
 ### Templates
 Offer one of these five. Default to reverse-chronological single-column — it parses cleanly through applicant tracking systems (ATS) and suits most candidates.
