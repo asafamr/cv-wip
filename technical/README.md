@@ -7,8 +7,8 @@ How an agent turns the CV HTML into a correct one-page A4 PDF and checks that it
 Output one self-contained `.html` file that renders as a single A4 page.
 
 - Inline the `<style>` in the document.
-- Use no external CSS, JS, fonts, or images.
-- Embed any photo or icon as a `data:` URI or inline SVG.
+- Reference nothing external at render time — no CDN CSS, JS, fonts, or images.
+- Embed any photo, icon, or font as a `data:` URI or inline SVG. An embedded `@font-face` font is fine; keep the text selectable, never outline it.
 
 Font-family choices live in [`../styling/README.md`](../styling/README.md).
 

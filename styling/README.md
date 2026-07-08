@@ -68,14 +68,28 @@ Two columns fit more content and separate dense lists (skills, tools) from narra
 
 ## Typography
 
-System font stacks only. No Google Fonts, no web fonts.
+Two paths. A system font stack is the safe default — no setup, always renders. Embed an open-licensed font when you want the type to look designed rather than defaulted. Pick one family for the whole document either way.
+
+### System stacks (default)
 
 - Sans: `"Helvetica Neue", Helvetica, Arial, sans-serif`
 - Serif: `Georgia, serif`
+- Mono: `"SF Mono", Menlo, Consolas, "Liberation Mono", monospace`
 
-Serif reads senior and considered — fitting at staff/principal or research levels. Sans reads current and is the safe default. Pick one for the whole document.
+Serif reads senior and considered — fitting at staff/principal or research levels. Sans reads current and is the safe default.
 
-Monospace is allowed only for the tech-stack line or inline tool and version tokens, set in ink — never for body, headings, name, or dates, and not on functional or non-engineering CVs. Use `"SF Mono", Menlo, Consolas, "Liberation Mono", monospace`, and keep the accent color off it. One emphasis at a time.
+### Embedded fonts (optional upgrade)
+
+Real type lifts the whole page. Use only families under the **SIL Open Font License 1.1** — free for commercial and personal use, embeddable. Do not sell the font alone, keep its copyright/license notice in a CSS comment, and never rename a modified copy under its reserved name. Vetted pairings:
+
+- **IBM Plex Sans + IBM Plex Mono** — one superfamily for body, headings, and tech tokens. Guaranteed coherence; the default upgrade.
+- **Fraunces or Source Serif 4** (name + headings) with **Source Sans 3** (body) — the most senior, editorial look.
+
+Embed each weight as a base64 `data:` URI inside `@font-face` so the file stays self-contained and renders identically everywhere — more deterministic than a system stack, not less. Never link a font CDN, and never outline text to paths: the CV must stay selectable text so applicant tracking systems (ATS) can parse it. Fetch the OFL files from Google Fonts or the family's own repository.
+
+### Monospace
+
+From either path, monospace is allowed only for the tech-stack line or inline tool and version tokens, set in ink — never for body, headings, name, or dates, and not on functional or non-engineering CVs. Keep the accent color off it. One emphasis at a time.
 
 Type sizes:
 

@@ -8,8 +8,8 @@ tools: Read, Write, Edit, Glob, Grep, Bash
 You build CV templates for cv-wip. A template is a single self-contained HTML file that renders as one A4 PDF page, using fictional demo data.
 
 ## Hard constraints (from README.md — non-negotiable)
-- **One self-contained `.html` file.** Inline `<style>`. No external CSS, JS, fonts, or images. Embed photos/icons as data URIs or inline SVG.
-- **System fonts only**: `Helvetica, Arial, sans-serif` or `Georgia, serif`. No Google Fonts.
+- **One self-contained `.html` file.** Inline `<style>`. Reference nothing external at render time. Embed photos, icons, and fonts as data URIs or inline SVG.
+- **Fonts**: system stacks (`Helvetica, Arial, sans-serif` or `Georgia, serif`) or an embedded open-licensed (SIL OFL) font as a base64 `data:` URI in `@font-face`. Keep text selectable — never outline it. See `styling/README.md`.
 - **Page setup is mandatory**:
   ```css
   @page { size: A4; margin: 0; }
