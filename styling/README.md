@@ -14,9 +14,10 @@ A template's layout, its color theme, and its typography are three independent a
   --ink:         #1f2328;   /* body text */
   --muted:       #5b636b;   /* dates, meta, secondary text */
   --rule:        #d5dadd;   /* hairlines and dividers */
-  /* ---- Typography — swap via a typography preset ---- */
-  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;   /* name + section headings */
-  --font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;   /* body text */
+  /* ---- Typography — one base font; heading/body default to it. Swap via a typography preset ---- */
+  --font:         "Helvetica Neue", Helvetica, Arial, sans-serif;   /* base — drives all text */
+  --font-heading: var(--font);   /* name + section headings; set a face here to override */
+  --font-body:    var(--font);   /* body text; set a face here to override */
   /* ---- Spacing — template-owned; not a preset ---- */
   --gap-section: 4.6mm;     /* space between sections */
   --gap-item:    2.6mm;     /* space between items within a section */
@@ -60,13 +61,15 @@ System font stacks only. No Google Fonts, no web fonts.
 - Sans: `"Helvetica Neue", Helvetica, Arial, sans-serif`
 - Serif: `Georgia, "Times New Roman", serif`
 
-A typography preset sets `--font-heading` and `--font-body`:
+`--font` is the base face — it drives all text. `--font-heading` and `--font-body` default to `var(--font)`; give one a face of its own only to override that part. Edit `--font` alone and every non-overridden run of text moves with it.
 
-| Name | `--font-heading` | `--font-body` |
-|---|---|---|
-| Modern (default) | Sans | Sans |
-| Editorial | Serif | Sans |
-| Classic | Serif | Serif |
+A typography preset sets these three tokens (`var(--font)` means "use the base"):
+
+| Name | `--font` | `--font-heading` | `--font-body` |
+|---|---|---|---|
+| Modern (default) | Sans | `var(--font)` | `var(--font)` |
+| Editorial | Sans | Serif | `var(--font)` |
+| Classic | Serif | `var(--font)` | `var(--font)` |
 
 For most tech roles, use Modern or Editorial. Classic suits research- or academic-leaning profiles — serif body at 9–10pt reads denser and more formal.
 
