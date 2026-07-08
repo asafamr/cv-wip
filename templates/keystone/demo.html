@@ -11,16 +11,18 @@
 -->
 <style>
   :root {
-    /* Theme tokens — change these to reskin the whole template */
-    --accent:      #7a2230;   /* name, headings, rules, links — deep oxblood */
-    --accent-soft: #f6ecee;   /* tint behind the highlight block */
+    /* ---- Color theme — swap via a color preset (see styling/README.md). Default: Burgundy ---- */
+    --accent:      #6b2737;   /* name, headings, rules, links */
+    --accent-soft: #f4e9ec;   /* pale tint of --accent: highlight-block background */
     --ink:         #1f2124;   /* body text */
     --muted:       #5c6169;   /* dates, meta, secondary text */
     --rule:        #d8d3d4;   /* hairlines */
+    /* ---- Typography — swap via a typography preset. Default: Editorial (serif headings, sans body) ---- */
+    --font-heading: Georgia, "Times New Roman", serif;              /* name + section headings */
+    --font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif; /* body text */
+    /* ---- Spacing — template-owned; not a preset. Tune to fit one page ---- */
     --gap-section: 4.4mm;     /* space between sections */
     --gap-item:    2.4mm;     /* space between items within a section */
-    --font-serif:  Georgia, "Times New Roman", serif;      /* name + headings */
-    --font-sans:   "Helvetica Neue", Helvetica, Arial, sans-serif; /* body */
   }
 
   @page { size: A4; margin: 0; }
@@ -33,7 +35,7 @@
     padding: 12mm 14mm;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-size: 9.5pt;
     line-height: 1.32;
     color: var(--ink);
@@ -44,7 +46,7 @@
   /* ---------- Header ---------- */
   header { margin-bottom: 3mm; }
   .name {
-    font-family: var(--font-serif);
+    font-family: var(--font-heading);
     font-size: 22pt;
     font-weight: 700;
     letter-spacing: 0.2px;
@@ -70,7 +72,7 @@
   .section { margin-bottom: var(--gap-section); page-break-inside: avoid; break-inside: avoid; }
   .section:last-child { margin-bottom: 0; }
   .section-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-heading);
     font-size: 11.5pt;
     font-weight: 700;
     text-transform: uppercase;

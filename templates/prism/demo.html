@@ -11,15 +11,18 @@
 -->
 <style>
   :root {
-    /* Theme tokens — change these to reskin the whole template */
-    --accent:      #4338a8;   /* deep indigo — headings, name, rules, links */
-    --accent-soft: #eceafa;   /* tint backgrounds for theme headings */
+    /* ---- Color theme — swap via a color preset (see styling/README.md). Default: Indigo ---- */
+    --accent:      #4338a8;
+    --accent-soft: #eceafa;   /* pale tint of --accent */
     --ink:         #1f2328;   /* body text */
     --muted:       #5b636b;   /* dates, meta, secondary text */
     --rule:        #d5dadd;   /* hairlines */
+    /* ---- Typography — swap via a typography preset. Default: Modern (all-sans) ---- */
+    --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;   /* name + section headings */
+    --font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;   /* body text */
+    /* ---- Spacing — template-owned; not a preset ---- */
     --gap-section: 5mm;       /* space between sections */
     --gap-item:    2.6mm;     /* space between items within a section */
-    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   @page { size: A4; margin: 0; }
@@ -32,7 +35,7 @@
     padding: 12mm 14mm;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    font-family: var(--font);
+    font-family: var(--font-body);
     font-size: 9.5pt;
     line-height: 1.34;
     color: var(--ink);
@@ -43,6 +46,7 @@
   /* ---------- Header ---------- */
   header { margin-bottom: 3.4mm; }
   .name {
+    font-family: var(--font-heading);
     font-size: 22pt;
     font-weight: 700;
     letter-spacing: 0.2px;
@@ -73,6 +77,7 @@
   .section { margin-bottom: var(--gap-section); page-break-inside: avoid; break-inside: avoid; }
   .section:last-child { margin-bottom: 0; }
   .section-title {
+    font-family: var(--font-heading);
     font-size: 11pt;
     font-weight: 700;
     text-transform: uppercase;
@@ -95,6 +100,7 @@
     padding-left: 3.4mm;
   }
   .theme-title {
+    font-family: var(--font-heading);
     font-size: 11pt;
     font-weight: 700;
     color: var(--ink);
@@ -113,7 +119,7 @@
   .entry { margin-bottom: var(--gap-item); page-break-inside: avoid; break-inside: avoid; }
   .entry:last-child { margin-bottom: 0; }
   .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
-  .role { font-weight: 700; font-size: 9.7pt; }
+  .role { font-family: var(--font-heading); font-weight: 700; font-size: 9.7pt; }
   .org { font-weight: 600; color: var(--ink); }
   .dates { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
   .place { color: var(--muted); font-size: 8.6pt; }
@@ -122,7 +128,7 @@
   /* ---------- Education ---------- */
   .kv { margin-bottom: 1.6mm; page-break-inside: avoid; break-inside: avoid; }
   .kv:last-child { margin-bottom: 0; }
-  .kv .k { font-weight: 700; font-size: 9.7pt; }
+  .kv .k { font-family: var(--font-heading); font-weight: 700; font-size: 9.7pt; }
   .kv .v { color: var(--muted); font-size: 8.8pt; }
 </style>
 
