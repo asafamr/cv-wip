@@ -1,4 +1,7 @@
 # Claude Code local state — keep agents tracked, ignore the rest
 .claude/worktrees/
 .claude/settings.local.json
+
+# Generated playground output
+_site/
 .claude/skills/*/node_modules/
