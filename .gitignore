@@ -4,3 +4,4 @@
 
 # Generated playground output
 _site/
+.claude/skills/*/node_modules/

@@ -9,14 +9,18 @@
 -->
 <style>
   :root {
-    /* Theme tokens — change these to reskin the whole template */
-    --accent:  #3f5a73;   /* name, hairlines, small section labels */
-    --ink:     #23272b;   /* body text */
-    --muted:   #626a72;   /* dates, meta, secondary text */
-    --rule:    #d9dde1;   /* hairlines */
+    /* ---- Color theme — swap via a color preset (see styling/README.md). Default: Monochrome ---- */
+    --accent:      #3d3d3d;
+    --accent-soft: #ededed;   /* pale tint of --accent */
+    --ink:         #23272b;   /* body text */
+    --muted:       #626a72;   /* dates, meta, secondary text */
+    --rule:        #d9dde1;   /* hairlines */
+    /* ---- Typography — swap via a typography preset. Default: Modern (all-sans) ---- */
+    --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;   /* name + section headings */
+    --font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;   /* body text */
+    /* ---- Spacing — template-owned; not a preset ---- */
     --gap-section: 8.5mm; /* space between sections — air is the point */
     --gap-item:    3mm;   /* space between entries within a section */
-    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   @page { size: A4; margin: 0; }
@@ -29,7 +33,7 @@
     padding: 12mm 14mm;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    font-family: var(--font);
+    font-family: var(--font-body);
     font-size: 9.5pt;
     line-height: 1.4;
     color: var(--ink);
@@ -40,6 +44,7 @@
   /* ---------- Header ---------- */
   header { margin-bottom: var(--gap-section); }
   .name {
+    font-family: var(--font-heading);
     font-size: 22pt;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -64,6 +69,7 @@
   .section { margin-bottom: var(--gap-section); page-break-inside: avoid; break-inside: avoid; }
   .section:last-child { margin-bottom: 0; }
   .section-label {
+    font-family: var(--font-heading);
     font-size: 9pt;
     font-weight: 600;
     text-transform: uppercase;
